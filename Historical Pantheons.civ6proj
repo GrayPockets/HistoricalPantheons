@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
+    <Name>[COLOR:184,134,11,255]GrayPockets[ENDCOLOR] - Historical Pantheons</Name>
+    <Guid>6ee7b393-2762-4895-bffd-54f04b7a64e7</Guid>
+    <ProjectGuid>{057fbd39-7447-443b-99b1-44214fe132ef}</ProjectGuid>
+    <ModVersion>1</ModVersion>
+    <Teaser>Changes Pantheon titles to include deity names.</Teaser>
+    <Description>Changes Pantheon titles to include deity names from a historical pantheon. It uses a format similar to the "Gifts of the Nile" scenario. The historical pantheon names are applied to all Civilizations. Current selectable pantheons: Greek, Norse[NEWLINE][NEWLINE]Mod Support[NEWLINE][ICON_BULLET] Ancient Egyptian Pantheons[NEWLINE][ICON_BULLET] Religions Expanded</Description>
+    <Authors>GrayPockets</Authors>
+    <SpecialThanks>
+    </SpecialThanks>
+    <AffectsSavedGames>false</AffectsSavedGames>
+    <SupportsSinglePlayer>true</SupportsSinglePlayer>
+    <SupportsMultiplayer>true</SupportsMultiplayer>
+    <SupportsHotSeat>true</SupportsHotSeat>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+    <AssemblyName>GrayPockets.HistoricalPantheons</AssemblyName>
+    <RootNamespace>GrayPockets.HistoricalPantheons</RootNamespace>
+    <AssociationData><![CDATA[<Associations>
+  <Reference type="Dlc" title="Scenario: Jadwiga's Legacy" id="CD953AD5-2869-4654-91EC-E48D118EF3F3" />
+  <Reference type="Dlc" title="Scenario: Vikings, Traders, and Raiders!" id="05698E46-1032-43C7-A40C-FA3D02858D2A" />
+  <Reference type="Dlc" title="Scenario: Gifts of the Nile" id="7619F77B-BAA7-4912-AA6E-45C124E6ECFD" />
+  <Reference type="Mod" title="Religion Expanded" id="c6775ded-6693-474a-ade5-b4c51d932bd8" />
+  <Reference type="Mod" title="Ancient Egyptian Pantheons" id="a7f26e08-378d-4b83-8df8-e672d93393fc" />
+</Associations>]]></AssociationData>
+    <InGameActionData><![CDATA[<InGameActions><UpdateText id="Text_HistoricalPantheons_Poland"><Properties><LoadOrder>1</LoadOrder></Properties><Criteria>ModInUse_JadwigasLegacy</Criteria><File>SQL/Text/HistoricalPantheons_Poland.sql</File></UpdateText><UpdateText id="Text_HistoricalPantheons_Vikings"><Properties><LoadOrder>1</LoadOrder></Properties><Criteria>ModInUse_VikingsTradersAndRaiders</Criteria><File>SQL/Text/HistoricalPantheons_Vikings.sql</File></UpdateText><UpdateText id="Text_HistoricalPantheons_AncientEgyptionPantheons"><Properties><LoadOrder>101</LoadOrder></Properties><Criteria>ModInUse_AncientEgyptianPantheons</Criteria><File>SQL/Text/HistoricalPantheons_AncientEgyptianPantheons.sql</File></UpdateText><UpdateText id="Text_HistoricalPantheons_Greek"><Properties><LoadOrder>1</LoadOrder></Properties><Criteria>HistroicalPantheon_Greek</Criteria><File>SQL/Text/HistoricalPantheons_Greek.sql</File></UpdateText><UpdateText id="Text_HistoricalPantheons_ReligionExpanded_Greek"><Properties><LoadOrder>16</LoadOrder></Properties><Criteria>HistroicalPantheon_Greek</Criteria><Criteria>ModInUse_ReligionExpanded</Criteria><File>SQL/Text/HistoricalPantheons_ReligionExpanded_Greek.sql</File></UpdateText><UpdateText id="Text_HistoricalPantheons_Norse"><Properties><LoadOrder>1</LoadOrder></Properties><Criteria>HistroicalPantheon_Norse</Criteria><File>SQL/Text/HistoricalPantheons_Norse.sql</File></UpdateText><UpdateText id="Text_HistoricalPantheons_ReligionExpanded_Norse"><Properties><LoadOrder>16</LoadOrder></Properties><Criteria>HistroicalPantheon_Norse</Criteria><Criteria>ModInUse_ReligionExpanded</Criteria><File>SQL/Text/HistoricalPantheons_ReligionExpanded_Norse.sql</File></UpdateText></InGameActions>]]></InGameActionData>
+    <FrontEndActionData><![CDATA[<FrontEndActions><UpdateDatabase id="Setup_HistoricalPantheons_Configuration"><File>SQL/Setup/HistoricalPantheons_Configuration.sql</File></UpdateDatabase><UpdateText id="Setup_HistoricalPantheons_Configuration_Text"><File>SQL/Setup/HistoricalPantheons_Configuration_Text.sql</File></UpdateText></FrontEndActions>]]></FrontEndActionData>
+    <ModProperties>
+      <CustomProperties xmlns="" />
+    </ModProperties>
+    <ActionCriteriaData><![CDATA[<ActionCriteria><Criteria id="ModInUse_JadwigasLegacy"><ModInUse>CD953AD5-2869-4654-91EC-E48D118EF3F3</ModInUse></Criteria><Criteria id="ModInUse_VikingsTradersAndRaiders"><ModInUse>05698E46-1032-43C7-A40C-FA3D02858D2A</ModInUse></Criteria><Criteria id="ModInUse_ReligionExpanded"><ModInUse>c6775ded-6693-474a-ade5-b4c51d932bd8</ModInUse></Criteria><Criteria id="ModInUse_AncientEgyptianPantheons"><ModInUse>a7f26e08-378d-4b83-8df8-e672d93393fc</ModInUse></Criteria><Criteria id="HistroicalPantheon_Greek"><ConfigurationValueMatches><ConfigurationId>HistroicalPantheon</ConfigurationId><Group>Game</Group><Value>1</Value></ConfigurationValueMatches></Criteria><Criteria id="HistroicalPantheon_Norse"><ConfigurationValueMatches><ConfigurationId>HistroicalPantheon</ConfigurationId><Group>Game</Group><Value>2</Value></ConfigurationValueMatches></Criteria></ActionCriteria>]]></ActionCriteriaData>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include=".gitignore">
+      <SubType>Content</SubType>
+    </None>
+    <None Include="README.md">
+      <SubType>Content</SubType>
+    </None>
+    <Content Include="Historical Pantheons.png">
+      <SubType>Content</SubType>
+    </Content>
+    <None Include="Historical Pantheons.xcf">
+      <SubType>Content</SubType>
+    </None>
+    <None Include="LICENSE">
+      <SubType>Content</SubType>
+    </None>
+    <Content Include="SQL\Setup\HistoricalPantheons_Configuration.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="SQL\Setup\HistoricalPantheons_Configuration_Text.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="SQL\Text\HistoricalPantheons_AncientEgyptianPantheons.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="SQL\Text\HistoricalPantheons_Greek.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="SQL\Text\HistoricalPantheons_Norse.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="SQL\Text\HistoricalPantheons_Nubia.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="SQL\Text\HistoricalPantheons_Poland.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="SQL\Text\HistoricalPantheons_ReligionExpanded_Greek.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="SQL\Text\HistoricalPantheons_ReligionExpanded_Norse.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="SQL\Text\HistoricalPantheons_Vikings.sql">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SQL" />
+    <Folder Include="SQL\Text" />
+    <Folder Include="SQL\Setup" />
+  </ItemGroup>
+  <Import Project="$(MSBuildLocalExtensionPath)Civ6.targets" />
+</Project>
